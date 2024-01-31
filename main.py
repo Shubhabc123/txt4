@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloa dकर रहा हूं मालिक:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
+                    Show = f"**Downloa कर रहा हूं मालिक:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -200,7 +200,7 @@ async def account_login(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                    f"**downloading failed tiger **\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                    f"**माफ कर दो मालिक download नहीं कर पाया 🥺**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
                 continue
 
