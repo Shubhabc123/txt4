@@ -34,21 +34,21 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**STOPPED**🚦", True)
+    await m.reply_text("**रुक गया मालिक**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
 @bot.on_message(filters.command(["TSUNAMI"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('Send TXT file for download भेजो भेजो मैं जिन्दा हूं।')
+    editable = await m.reply_text('मालिक TXT file भेजो मैं जिन्दा हूं ।')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
 
 
 
-    path = f"./downloads/{m.chat.id}"
+    path = f"./मालिक Download कर रहा हूं/{m.chat.id}"
 
     try:
        with open(x, "r") as f:
@@ -65,18 +65,18 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
+    await editable.edit(f"Total links found are **{len(links)}**\n\nमालिक आपको कहां से Video चाहिए Starting से चाहिए तो 1 दबा दो**1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Enter Batch Name**")
+    await editable.edit("**Batch का नाम डालो मालिक**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
     
 
-    await editable.edit("**Enter resolution**")
+    await editable.edit("**मालिक कौन सी QUALITY में भेजूं**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
+                    Show = f"**Downloa dकर रहा हूं मालिक:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
