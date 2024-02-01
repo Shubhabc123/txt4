@@ -65,7 +65,7 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nमालिक आपको कहां से Video चाहिए Starting से चाहिए तो 1 दबा दो**1**")
+    await editable.edit(f"Total links found are **{len(links)}**\n\nमालिक आपको कहां से Video चाहिए Starting से चाहिए तो 1 दबा दो  **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloa कर रहा हूं मालिक:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
+                    Show = f"**Download कर रहा हूं मालिक:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
